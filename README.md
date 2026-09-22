@@ -8,13 +8,13 @@ Vectors are on Hugging Face: [`timf34/gemma-assistant-axis-vectors`](https://hug
 huggingface-cli download timf34/gemma-assistant-axis-vectors --repo-type dataset --local-dir .
 ```
 
-| model | shape | middle layer |
-|---|---|---|
-| `google/gemma-2-27b-it` | 46 × 4608 | 22 |
-| `google/gemma-3-27b-it` | 62 × 5376 | 31 |
-| `google/gemma-4-31B-it` | 60 × 5376 | 30 |
+| model | shape (layers × d_model) |
+|---|---|
+| `google/gemma-2-27b-it` | 46 × 4608 |
+| `google/gemma-3-27b-it` | 62 × 5376 |
+| `google/gemma-4-31B-it` | 60 × 5376 |
 
-Each model folder has `assistant_axis.pt`, `default_vector.pt` and `role_vectors/` (275 personas), all shaped `[n_layers, d_model]`.
+Each model folder has `assistant_axis.pt`, `default_vector.pt` and `role_vectors/` (275 personas), all shaped `[n_layers, d_model]`, with a vector for every layer.
 
 ```python
 import torch
